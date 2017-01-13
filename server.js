@@ -86,9 +86,9 @@ wss.on('connection', function(ws) {
                     , contributors = []
                 room.items[id].members.forEach(item => item.id != ws.id ? contributors.push(item.id) : null)
             case 'onRefreshToken':
-                if (event.token && !tokens.isValidToken(event.token) || !event.token) {
-                    var token = ""
-                    token = SHA256(ws.id + salt) + token
+                var token = event.token
+                if (token && !tokens.isValidToken(token) || !token) {
+                    token = SHA256(ws.id + salt)
                     tokens.register({token: token, date: new Date(new Date().getTime() + 30 * 60 * 1000)})
                     data = { type: 'onRender', token: token }
                         , contributors = [ ws.id ]
