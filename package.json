@@ -1,0 +1,15 @@
+{
+    "name" : "simple-chat",
+    "title" : "simple-chat",
+    "description": "simplify chat with rooms",
+    "version": "0.1.1",
+    "author": {
+        "name": "Cacao"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "crypto-js": "*",
+        "express": "*",
+        "ws" : "*"
+    }
+}
